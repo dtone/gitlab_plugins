@@ -1,0 +1,31 @@
+version: '2'
+services:
+  gitlab: 
+    image: gitlab/gitlab-ce:latest
+    restart: always
+    ports: 
+      - '80:80'
+      - '443:443'
+      - '22:22'
+    volumes:
+      - '/home/franta/gitlab/config:/etc/gitlab'
+      - '/home/franta/gitlab/log:/var/log/gitlab'
+      - '/home/franta/gitlab/data:/var/opt/gitlab'    
+  mariadb:
+    image: 'bitnami/mariadb:10.3'
+    restart: always
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_EXTRA_FLAGS=--local-infile=0
+    volumes:
+      - '/home/franta/mariadb:/bitnami'
+  phabricator:
+    image: 'bitnami/phabricator:2019'
+    restart: always
+    ports:
+      - '81:80'
+      - '444:443'
+    volumes:
+      - '/home/franta/phabricator:/bitnami'
+    depends_on:
+      - mariadb

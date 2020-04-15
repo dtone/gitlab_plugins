@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# echo '{"event_type": "test to skip event"} | ./run'
+timeout --preserve-status 10 nc 'localhost' 2019 <&0

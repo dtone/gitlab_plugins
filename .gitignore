@@ -1,0 +1,6 @@
+.vscode/*
+coverage/*
+utils/recorded_events/*
+vendor/*
+.bundle/config
+*.env

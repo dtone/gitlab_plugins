@@ -1,0 +1,15 @@
+[
+  {
+    "key": "default",
+    "name": "Project",
+    "fields": {
+      "custom.gitlab.url": {
+        "disabled": true
+      }
+    }
+  },
+  {
+    "key": "sourcecode",
+    "name": "Coded project"
+  }
+]

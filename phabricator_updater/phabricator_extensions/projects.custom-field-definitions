@@ -1,0 +1,13 @@
+{
+  "gitlab.url": {
+    "description": "Field to store Gitlab repository URL for per-repo projects",
+    "name": "Gitlab URL",
+    "type": "link",
+    "required": false,
+    "edit": true,
+    "view": true,
+    "search": true,
+    "fulltext": false,
+    "default": null
+  }
+}

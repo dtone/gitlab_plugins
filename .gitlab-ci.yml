@@ -1,0 +1,28 @@
+---
+include:
+  - project: "ops/ci"
+    ref: master
+    file: "/ruby/.gitlab-ci.yml"
+  - project: "ops/ci"
+    ref: master
+    file: "/docker/build_and_push/.gitlab-ci.yml"
+
+stages:
+  - test
+  - lint
+  - security_test
+  - docker_build
+  - docker_push
+
+# build image as docker.dtone.xyz/office/gitlab_plugins:latest
+docker_build:
+  only:
+    refs: [master]
+  stage: docker_build
+  tags: [shell]
+
+docker_push:
+  only:
+    refs: [master]
+  stage: docker_push
+  tags: [shell]

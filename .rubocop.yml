@@ -1,0 +1,28 @@
+require:
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  Exclude:
+    - 'config/**/*'
+    - 'utils/**/*'
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+  Exclude:
+    - 'config/config.rb'
+Metrics/MethodLength:
+  Max: 25
+Metrics/LineLength:
+  Exclude:
+    - 'config/config.rb'
+Metrics/AbcSize:
+  Max: 25
+RSpec/FilePath:
+  Enabled: false
+RSpec/ExampleLength:
+  Max: 15
+# I would like to have enable it but it's a bit complicated now
+RSpec/MessageSpies:
+  Enabled: false
+RSpec/SubjectStub:
+  Enabled: false
